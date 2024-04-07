@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/account">
+        <menu>
+            <item android:title="@string/myOrder"
+                android:id="@+id/myOrder"/>
+
+            <item android:title="@string/myDrone"
+                android:id="@+id/myDrone"/>
+
+            <item android:title="@string/myAddress"
+                android:id="@+id/myAddress"/>
+
+            <item android:title="@string/mySoil"
+                android:id="@+id/mySoil"/>
+        </menu>
+
+    </item>
+
+    <item android:title="@string/feedback">
+        <menu>
+            <item android:title="@string/contact"
+                android:id="@+id/contact"/>
+
+            <item android:title="@string/about"
+                android:id="@+id/about"/>
+
+            <item android:title="@string/share"
+                android:id="@+id/share"/>
+
+            <item android:title="@string/rate"
+                android:id="@+id/rate"/>
+
+            <item android:title="@string/shipping"
+                android:id="@+id/shipping"/>
+
+            <item android:title="@string/returnPolicy"
+                android:id="@+id/returnPolicy"/>
+
+            <item android:title="@string/refund"
+                android:id="@+id/refund"/>
+        </menu>
+
+    </item>
+
+    <item android:title="@string/logout"
+        android:id="@+id/logout"/>
+
+    <item android:title="@string/version"
+        android:id="@+id/version"/>
+
+
+
+
+
+
+</menu>

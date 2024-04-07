@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">SmartFarming Application</string>
+
+    // Bottom Navigation
+    <string name="home">Home</string>
+    <string name="shop">Shop</string>
+    <string name="calendar">Calendar</string>
+    <string name="community">Community</string>
+    <string name="crop_practices">Crop Practices</string>
+
+    // Nav Header
+    <string name="user_name">Deepak Khatana</string>
+    <string name="user_number">9997687852</string>
+    <string name="account">Account</string>
+    <string name="myOrder">My Orders</string>
+    <string name="myDrone">My Drone Orders</string>
+    <string name="myAddress">My Addresses</string>
+    <string name="mySoil">My Soil Test</string>
+    <string name="feedback">Feedback and Information</string>
+    <string name="contact">Contact Us</string>
+    <string name="about">About</string>
+    <string name="share">Share App</string>
+    <string name="rate">Rate App</string>
+    <string name="shipping">Shipping Policy</string>
+    <string name="returnPolicy">Return Policy</string>
+    <string name="refund">Refund Policy</string>
+    <string name="logout">Logout</string>
+    <string name="version">v4.9.973</string>
+
+    // Open and Close
+    <string name="close">Close</string>
+    <string name="open">Open</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>
