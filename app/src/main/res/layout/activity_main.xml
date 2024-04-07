@@ -17,12 +17,13 @@
            <include layout="@layout/custom_toolbar"
                android:layout_marginTop="30dp"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content" />
+               android:layout_height="wrap_content"
+               app:titleTextAppearance="@style/BoldTitleTextAppearance"/>
 
             <FrameLayout
                 android:layout_weight="1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:id="@+id/fragment_container"/>
 
             <com.google.android.material.bottomnavigation.BottomNavigationView

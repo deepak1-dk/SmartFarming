@@ -1,7 +1,11 @@
 package com.example.smartfarmingapplication
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
@@ -31,6 +35,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     @SuppressLint("RestrictedApi")
     private lateinit var bottomNavigationView: BottomNavigationView
 
+    val text : String = "AgriApp"
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,10 +47,29 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets*/
 
+
+        // Use SpannableString for add multi color in AgriApp Text
+        val spannable = SpannableString(text)
+        // Set custom color for "Agri"
+        spannable.setSpan(
+            ForegroundColorSpan(Color.parseColor("#4CAF50")),
+            0,4,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        // Set custom color for "App"
+        spannable.setSpan(
+            ForegroundColorSpan(Color.parseColor("#F44336")),
+            4, text.length,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+
+
         // Set the custom toolbar as the action bar
         toolbar = findViewById(R.id.custom_toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.title = "AgriApp"
+        supportActionBar?.title = spannable
+
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)
@@ -61,11 +86,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         bottomNavigationView.background = null
         bottomNavigationView.setOnItemSelectedListener {item ->
             when(item.itemId){
-                R.id.home -> openFragment(HomeFragment())
-                R.id.shop -> openFragment(ShopFragment())
-                R.id.calendar -> openFragment(CalendarFragment())
-                R.id.community -> openFragment(CommunityFragment())
-                R.id.crop_practices -> openFragment(CropFragment())
+                R.id.home -> {
+                    openFragment(HomeFragment())
+                    supportActionBar?.title = spannable
+                }
+                R.id.shop -> {
+                    openFragment(ShopFragment())
+                    supportActionBar?.title = "Shop"
+                }
+                R.id.calendar -> {
+                    openFragment(CalendarFragment())
+                    supportActionBar?.title ="Calendar"
+                }
+                R.id.community -> {
+                    openFragment(CommunityFragment())
+                    supportActionBar?.title = "Community"
+                }
+                R.id.crop_practices -> {
+                    openFragment(CropFragment())
+                    supportActionBar?.title = "Crop Practice"
+                }
             }
             true
         }
@@ -97,6 +137,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         super.onBackPressed()
         if (drawerLayout.isDrawerOpen(GravityCompat.START)){
